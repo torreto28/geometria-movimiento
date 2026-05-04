@@ -1,0 +1,5 @@
+chore: initial site refactor
+
+Split CSS/JS, add README, vercel config
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><!-- TODO: replace with descriptive title -->Geometría en Movimiento — Billar Geométrico</title>
+<meta name="description" content="<!-- TODO: write meta description (150-160 chars) -->">
+<meta property="og:title" content="<!-- OG title -->Geometría en Movimiento">
+<meta property="og:description" content="<!-- OG description -->">
+<meta property="og:type" content="website">
+<meta property="og:image" content="<!-- /assets/images/og-image.png -->">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>🎱 Geometría en Movimiento</h1>
+    <div class="sub">Simulador de Billar · Análisis Geométrico · U. de Medellín</div>
+  </div>
+  <div class="hs"></div>
+  <span class="rb">Harrison 1994</span>
+  <span class="rb">Berrío et al. 2017</span>
+  <span class="rb">Sabharwal 2013</span>
+</header>
+
+<main class="layout">
+  <!-- CANVAS -->
+  <section class="cc">
+    <div class="tw" id="tw">
+      <canvas id="billar"></canvas>
+      <div id="hint">
+        <h2>¡Dispara la bola!</h2>
+        <p><strong>Click en la bola blanca</strong> y arrastra<br>para apuntar. Suelta para disparar.</p>
+      </div>
+      <div id="fm">FUERZA: 0%</div>
+      <div id="tp">
+        <div class="tt" id="tpT"></div>
+        <div class="tb" id="tpB"></div>
+      </div>
+    </div>
+    <div class="cb">
+      <button class="btn on" id="bN"><span class="dot" style="background:#ffe066"></span>Normal / α=β</button>
+      <button class="btn on" id="bS"><span class="dot" style="background:#d084ff"></span>P* Isometría</button>
+      <button class="btn on" id="bL"><span class="dot" style="background:#ff6b6b"></span>△ L-A-L</button>
+      <button class="btn on" id="bT"><span class="dot" style="background:#5aabff"></span>Trayectoria</button>
+      <div class="sep"></div>
+      <button class="btn action" id="bA">+ Bola</button>
+      <button class="btn danger" id="bR">− Bola</button>
+      <button class="btn danger" id="bRst">↺ Reset</button>
+      <div class="sep"></div>
+      <button class="btn" id="bEx">⬇ CSV</button>
+    </div>
+  </section>
+
+  <!-- PANEL -->
+  <aside class="side">
+    <div class="ah">
+      <div class="ac a"><div class="big" id="vI">—</div><div class="albl">Incidencia α</div></div>
+      <div class="aeq">=</div>
+      <div class="ac b"><div class="big" id="vR">—</div><div class="albl">Reflexión β</div></div>
+    </div>
+    <div id="eqs">— Dispara para ver la ley de reflexión —</div>
+
+    <div id="cb">
+      <div class="ct" style="color:var(--gold)">Ley de Reflexión</div>
+      <div class="cy">Cuando una bola choca con una banda, el <strong>ángulo de entrada (α)</strong> siempre es igual al <strong>ángulo de salida (β)</strong>, medidos desde la <em>normal</em> de la superficie.<br><br>Es la misma fórmula que usan <strong>Unity</strong> y <strong>Godot</strong>. Fuente: <em>Berrío et al. (2017)</em></div>
+      <div class="cf">v' = v − 2(v · n̂)n̂</div>
+      <div class="cv"><span class="cok">✓</span><span class="cvv">Esperando primer rebote…</span></div>
+    </div>
+
+    <div class="sg">
+      <div class="st"><div class="n" id="sB">0</div><div class="d">Rebotes</div></div>
+      <div class="st"><div class="n" id="sBa">4</div><div class="d">Bolas</div></div>
+      <div class="st"><div class="n" id="sC">0</div><div class="d">Col. bola-bola</div></div>
+      <div class="st"><div class="n" id="sA">—</div><div class="d">Ángulo prom.</div></div>
+    </div>
+
+    <div class="lw">
+      <h4>Registro de impactos</h4>
+      <div class="log" id="lb"><div class="le">— Simulación lista —</div></div>
+    </div>
+  </aside>
+</main>
+
+<script defer src="assets/js/app.js"></script>
+</body>
+</html>
